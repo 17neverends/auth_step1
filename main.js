@@ -1,8 +1,7 @@
-const form = document.querySelector('form');
-const input_password = document.getElementById("password");
-const tg = window.Telegram.WebApp;
-const input_key = document.getElementById("key");
-const status_key = document.getElementById("status_key");
+let input_password = document.getElementById("password");
+let input_key = document.getElementById("key");
+
+
 // Password input swapped view/hide on mouse click 
 function view_password() {
     const path1 = document.getElementById("path1");
@@ -30,7 +29,6 @@ function view_password() {
 
 // Checking empty input userkey
 function validate_key() {
-    const input_key = document.getElementById("key");
     const status_key = document.getElementById("status_key");
     if (input_key.value.trim() === "") {
         status_key.innerText = "Введите ключ";
@@ -46,7 +44,6 @@ function validate_key() {
 
 // Checking empty password userkey
 function validate_password() {
-    const input_password = document.getElementById("password");
     const status_pass = document.getElementById("status_pass");
     if (input_password.value.trim() === "") {
         status_pass.innerText = "Введите пароль";
@@ -60,15 +57,18 @@ function validate_password() {
 
 //try request
 function request() {
+
     const key = validate_key();
     const pass = validate_password();
     if (key && pass) {
         let data = {
-            key: input_key,
-            password: input_password
-        }
+            key: input_key.value,
+            password: input_password.value
+        };
+        let tg = window.Telegram.WebApp;
+        tg.sendData(JSON.stringify(data));
     } 
-    tg.sendData(JSON.stringify(data));
 }
+
 
 
