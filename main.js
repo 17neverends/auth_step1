@@ -2,31 +2,6 @@ let input_password = document.getElementById("password");
 let input_key = document.getElementById("key");
 
 
-// Password input swapped view/hide on mouse click 
-function view_password() {
-    const path1 = document.getElementById("path1");
-    const path2 = document.getElementById("path2");
-    const path3 = document.getElementById("path3");
-    const path4 = document.getElementById("path4");
-    const path5 = document.getElementById("path5");
-    if (input_password.type === "text") {
-        input_password.type = "password";
-        path1.style.display = "block";
-        path2.style.display = "block";
-        path3.style.display = "none";
-        path4.style.display = "none";
-        path5.style.display = "none";
-    } else {
-        input_password.type = "text";
-        path1.style.display = "none";
-        path2.style.display = "none";
-        path3.style.display = "block";
-        path4.style.display = "block";
-        path5.style.display = "block";
-    }
-}
-
-
 // Checking empty input userkey
 function validate_key() {
     const status_key = document.getElementById("status_key");
@@ -55,9 +30,8 @@ function validate_password() {
 }
 
 
-//try request
+//transfer inputs data to bot
 function request() {
-
     const key = validate_key();
     const pass = validate_password();
     if (key && pass) {
