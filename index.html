@@ -14,7 +14,7 @@
         <label class="status" id="status_key"></label>
         <label for="password">Пароль</label>
             <div class="inputform">
-                <input type="password" id="password" name="password" placeholder="Введите пароль">
+<input type="password" id="password" name="password" placeholder="Введите пароль" readonly onfocus="this.removeAttribute('readonly');">
                 <label class="status" id="status_pass"></label>
                 <button type="button" id="check_pass" onclick="view_password()">
                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
