@@ -82,6 +82,7 @@ input:hover {
 }
 
 #check_pass {
+    display: none;
     position: absolute;
     right: 0;
     top: 50%;
