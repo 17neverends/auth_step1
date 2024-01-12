@@ -3,10 +3,13 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    position: fixed;
+    display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; 
-    overflow: hidden;
+    min-height: 40vh; 
+    min-width: 100%;
+    overflow-y:scroll 
 }
 
 form {
@@ -60,7 +63,7 @@ input:hover {
 
 #signin_button {
     background-color: #1ab248;
-    color: white;
+    color: black;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
